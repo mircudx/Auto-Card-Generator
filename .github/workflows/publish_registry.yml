@@ -1,10 +1,10 @@
-﻿name: Publish to Comfy Registry
+name: Publish to Comfy Registry
 
 on:
   workflow_dispatch:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   publish-node:
