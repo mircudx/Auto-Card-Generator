@@ -12,6 +12,7 @@ This package includes baseline stacks for script-driven Kling workflows.
 - `CC Kling Plan Parser`
 - `CC Frame Pair Planner`
 - `CC Segment Image Gate`
+- `MirVideoMerger` (local ffmpeg-based video merge, no Replicate)
 
 ## Workflow Files
 
@@ -64,3 +65,8 @@ Copy `card_creator_llm` into:
 Restart ComfyUI.
 
 If a workflow imports with missing node errors, try `*_local_safe_compat.json` first.
+
+## MirVideoMerger Requirements
+
+- ffmpeg and ffprobe must be installed and available in PATH, or passed via node inputs.
+- Inputs support up to 50 videos (`video1..video50`) plus optional audio.

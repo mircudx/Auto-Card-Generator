@@ -1,4 +1,4 @@
-﻿# Card Creator LLM Nodes
+# Card Creator LLM Nodes
 
 Registry-ready ComfyUI custom nodes for building script-driven Kling 3.0 pipelines with GPT-5.4 planning.
 
@@ -45,3 +45,7 @@ Registry-ready ComfyUI custom nodes for building script-driven Kling 3.0 pipelin
 - Keep workflow private by default in your account.
 - Do not use `Share -> Create a link` if only you should access it.
 - Store all provider keys in Cloud Secrets, not in workflow JSON.
+
+## Local Video Node
+
+- MirVideoMerger is included in the custom node pack for local ffmpeg-based merging (up to 50 videos + optional audio).
