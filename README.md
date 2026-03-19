@@ -12,6 +12,21 @@ Registry-ready ComfyUI custom nodes for building script-driven Kling 3.0 pipelin
 - `workflows/card_creator_kling_gpt54_base.json`
 - `workflows/card_creator_kling3_start_end_chain.json`
 - `workflows/card_creator_kling3_60s_auto_skip.json`
+- `workflows/card_creator_kling3_start_end_chain_clean.json`
+- `workflows/card_creator_kling3_60s_auto_skip_clean.json`
+- `workflows/card_creator_kling3_start_end_chain_local_safe.json`
+- `workflows/card_creator_kling3_60s_auto_skip_local_safe.json`
+
+## Which Workflow To Import
+
+1. Local ComfyUI first try:
+   - `workflows/card_creator_kling3_60s_auto_skip_local_safe.json`
+2. If your setup has `SaveVideo` node:
+   - `workflows/card_creator_kling3_60s_auto_skip_clean.json`
+3. Legacy/full template (includes extra helper nodes):
+   - `workflows/card_creator_kling3_60s_auto_skip.json`
+
+`local_safe` removes optional helper/output nodes that are commonly missing in local installs.
 
 ## Publish To Comfy Registry
 

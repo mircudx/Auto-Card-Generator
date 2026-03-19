@@ -21,6 +21,14 @@ This package includes baseline stacks for script-driven Kling workflows.
   - 2-segment start/end chaining baseline.
 - `workflows/card_creator_kling3_60s_auto_skip.json`
   - Up to 60s (6 x 10s segments) with auto-skip of unused Kling nodes.
+- `workflows/card_creator_kling3_start_end_chain_clean.json`
+  - Same as chain baseline, but without helper UI nodes.
+- `workflows/card_creator_kling3_60s_auto_skip_clean.json`
+  - Same as 60s baseline, but without helper UI nodes.
+- `workflows/card_creator_kling3_start_end_chain_local_safe.json`
+  - Local-safe chain profile (no optional SaveVideo/helper nodes).
+- `workflows/card_creator_kling3_60s_auto_skip_local_safe.json`
+  - Local-safe 60s profile (no optional SaveVideo/helper nodes).
 
 ## 60s Auto-Skip Behavior
 
@@ -31,7 +39,7 @@ The 60s workflow uses this logic:
 3. For each segment node:
    - if `segment_index <= segment_count` -> gate passes start frame
    - if `segment_index > segment_count` -> gate emits `ExecutionBlocker`
-4. Blocked segments skip downstream Kling + SaveVideo execution.
+4. Blocked segments skip downstream Kling execution.
 
 Example:
 - Script fits ~20s -> `segment_count = 2`
@@ -54,3 +62,5 @@ Copy `card_creator_llm` into:
 - `ComfyUI/custom_nodes/card_creator_llm`
 
 Restart ComfyUI.
+
+If a workflow imports with missing node errors, try the `*_local_safe.json` variant first.

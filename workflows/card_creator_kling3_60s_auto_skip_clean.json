@@ -1,0 +1,2407 @@
+﻿{
+    "id":  "f4f0c701-7a95-4f9d-a760-9b5c72f78d34",
+    "revision":  0,
+    "last_node_id":  49,
+    "last_link_id":  53,
+    "nodes":  [
+                  {
+                      "mode":  0,
+                      "id":  1,
+                      "type":  "CCTextInput",
+                      "size":  [
+                                   430,
+                                   180
+                               ],
+                      "pos":  [
+                                  -1960,
+                                  640
+                              ],
+                      "order":  0,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "Paste full spoken script here"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        1,
+                                                        2
+                                                    ],
+                                          "name":  "text",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCTextInput"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  2,
+                      "type":  "CCTextInput",
+                      "size":  [
+                                   430,
+                                   180
+                               ],
+                      "pos":  [
+                                  -1960,
+                                  860
+                              ],
+                      "order":  1,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "Describe what should happen in video, desired location, mood, and constraints."
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        3
+                                                    ],
+                                          "name":  "text",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCTextInput"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  3,
+                      "type":  "CCTextInput",
+                      "size":  [
+                                   430,
+                                   180
+                               ],
+                      "pos":  [
+                                  -1960,
+                                  1080
+                              ],
+                      "order":  2,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "blur, low quality, distort, flicker, warping, jitter, morphing, watermark, subtitles, text overlay"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        8,
+                                                        10,
+                                                        12,
+                                                        14,
+                                                        16,
+                                                        18
+                                                    ],
+                                          "name":  "text",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCTextInput"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  4,
+                      "type":  "CCPromptBuilder",
+                      "size":  [
+                                   480,
+                                   430
+                               ],
+                      "pos":  [
+                                  -1450,
+                                  620
+                              ],
+                      "order":  3,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "Generate Kling prompts as strict JSON segments with continuity.",
+                                             "ugc_style",
+                                             "kling_multisegment",
+                                             true,
+                                             true,
+                                             true,
+                                             "",
+                                             "",
+                                             "",
+                                             "Default to single location. Keep character identity stable across all segments."
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        5
+                                                    ],
+                                          "name":  "system_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "user_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_blocks",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCPromptBuilder"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  5,
+                      "type":  "CCScriptChunkPlanner",
+                      "size":  [
+                                   480,
+                                   260
+                               ],
+                      "pos":  [
+                                  -1450,
+                                  1090
+                              ],
+                      "order":  4,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             10,
+                                             140,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        4
+                                                    ],
+                                          "name":  "segments_json",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segments_text",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "total_estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCScriptChunkPlanner"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  1,
+                                         "name":  "script_text",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  6,
+                      "type":  "CCKlingRequestBuilder",
+                      "size":  [
+                                   520,
+                                   540
+                               ],
+                      "pos":  [
+                                  -930,
+                                  980
+                              ],
+                      "order":  5,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             "",
+                                             "ugc_style",
+                                             "single_location_default",
+                                             "",
+                                             10,
+                                             140,
+                                             true,
+                                             true,
+                                             "",
+                                             "@Element1",
+                                             "@Element1 is actor identity and continuity anchor.",
+                                             ""
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        6
+                                                    ],
+                                          "name":  "llm_user_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingRequestBuilder"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  2,
+                                         "name":  "script_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  3,
+                                         "name":  "generation_brief",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  4,
+                                         "name":  "prepared_segments_json",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  7,
+                      "type":  "CCOpenAIResponsesNode",
+                      "size":  [
+                                   520,
+                                   390
+                               ],
+                      "pos":  [
+                                  -360,
+                                  800
+                              ],
+                      "order":  6,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             "",
+                                             "gpt-5.4",
+                                             "high",
+                                             3500,
+                                             180,
+                                             "",
+                                             "https://api.openai.com/v1/responses",
+                                             "card_creator_kling_60s_auto_skip"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        7,
+                                                        9,
+                                                        11,
+                                                        13,
+                                                        15,
+                                                        17
+                                                    ],
+                                          "name":  "output_text",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "raw_json",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "usage_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCOpenAIResponsesNode"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  6,
+                                         "name":  "user_prompt",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  5,
+                                         "name":  "system_prompt",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  8,
+                      "type":  "CCKlingPlanParser",
+                      "size":  [
+                                   490,
+                                   340
+                               ],
+                      "pos":  [
+                                  260,
+                                  420
+                              ],
+                      "order":  7,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             1,
+                                             "",
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt_for_node",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "negative_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_script",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "location",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  [
+                                                        27,
+                                                        28,
+                                                        29,
+                                                        30,
+                                                        31,
+                                                        32,
+                                                        33
+                                                    ],
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingPlanParser"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  7,
+                                         "name":  "llm_json_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  8,
+                                         "name":  "fallback_negative",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  9,
+                      "type":  "CCKlingPlanParser",
+                      "size":  [
+                                   490,
+                                   340
+                               ],
+                      "pos":  [
+                                  260,
+                                  690
+                              ],
+                      "order":  8,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             2,
+                                             "",
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt_for_node",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "negative_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_script",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "location",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingPlanParser"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  9,
+                                         "name":  "llm_json_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  10,
+                                         "name":  "fallback_negative",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  10,
+                      "type":  "CCKlingPlanParser",
+                      "size":  [
+                                   490,
+                                   340
+                               ],
+                      "pos":  [
+                                  260,
+                                  960
+                              ],
+                      "order":  9,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             3,
+                                             "",
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt_for_node",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "negative_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_script",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "location",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingPlanParser"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  11,
+                                         "name":  "llm_json_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  12,
+                                         "name":  "fallback_negative",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  11,
+                      "type":  "CCKlingPlanParser",
+                      "size":  [
+                                   490,
+                                   340
+                               ],
+                      "pos":  [
+                                  260,
+                                  1230
+                              ],
+                      "order":  10,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             4,
+                                             "",
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt_for_node",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "negative_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_script",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "location",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingPlanParser"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  13,
+                                         "name":  "llm_json_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  14,
+                                         "name":  "fallback_negative",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  12,
+                      "type":  "CCKlingPlanParser",
+                      "size":  [
+                                   490,
+                                   340
+                               ],
+                      "pos":  [
+                                  260,
+                                  1500
+                              ],
+                      "order":  11,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             5,
+                                             "",
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt_for_node",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "negative_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_script",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "location",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingPlanParser"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  15,
+                                         "name":  "llm_json_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  16,
+                                         "name":  "fallback_negative",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  13,
+                      "type":  "CCKlingPlanParser",
+                      "size":  [
+                                   490,
+                                   340
+                               ],
+                      "pos":  [
+                                  260,
+                                  1770
+                              ],
+                      "order":  12,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "",
+                                             6,
+                                             "",
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt_for_node",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "kling_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "negative_prompt",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_script",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "location",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "estimated_seconds",
+                                          "type":  "FLOAT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "segment_count",
+                                          "type":  "INT"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "debug_json",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCKlingPlanParser"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  17,
+                                         "name":  "llm_json_text",
+                                         "type":  "STRING"
+                                     },
+                                     {
+                                         "link":  18,
+                                         "name":  "fallback_negative",
+                                         "type":  "STRING"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  14,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  -420
+                              ],
+                      "order":  21,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_1.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        35
+                                                    ],
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  15,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  -220
+                              ],
+                      "order":  22,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_2.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        36,
+                                                        47
+                                                    ],
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  16,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  -20
+                              ],
+                      "order":  23,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_2.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        37
+                                                    ],
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  17,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  180
+                              ],
+                      "order":  24,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_2.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        38
+                                                    ],
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  18,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  380
+                              ],
+                      "order":  25,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_2.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        39
+                                                    ],
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  19,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  580
+                              ],
+                      "order":  26,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_2.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        40
+                                                    ],
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  20,
+                      "type":  "LoadImage",
+                      "size":  [
+                                   310,
+                                   314
+                               ],
+                      "pos":  [
+                                  -1940,
+                                  780
+                              ],
+                      "order":  27,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "actor_frame_2.png",
+                                             "image"
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "MASK",
+                                          "type":  "MASK"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "inputs":  [
+
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  21,
+                      "type":  "CCSegmentImageGate",
+                      "size":  [
+                                   320,
+                                   170
+                               ],
+                      "pos":  [
+                                  -1520,
+                                  -420
+                              ],
+                      "order":  31,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             1,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        41
+                                                    ],
+                                          "name":  "image_or_block",
+                                          "type":  "IMAGE"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCSegmentImageGate"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  27,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     },
+                                     {
+                                         "link":  35,
+                                         "name":  "image",
+                                         "type":  "IMAGE"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  22,
+                      "type":  "CCSegmentImageGate",
+                      "size":  [
+                                   320,
+                                   170
+                               ],
+                      "pos":  [
+                                  -1520,
+                                  -220
+                              ],
+                      "order":  32,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             2,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        42
+                                                    ],
+                                          "name":  "image_or_block",
+                                          "type":  "IMAGE"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCSegmentImageGate"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  28,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     },
+                                     {
+                                         "link":  36,
+                                         "name":  "image",
+                                         "type":  "IMAGE"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  23,
+                      "type":  "CCSegmentImageGate",
+                      "size":  [
+                                   320,
+                                   170
+                               ],
+                      "pos":  [
+                                  -1520,
+                                  -20
+                              ],
+                      "order":  33,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             3,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        43
+                                                    ],
+                                          "name":  "image_or_block",
+                                          "type":  "IMAGE"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCSegmentImageGate"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  29,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     },
+                                     {
+                                         "link":  37,
+                                         "name":  "image",
+                                         "type":  "IMAGE"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  24,
+                      "type":  "CCSegmentImageGate",
+                      "size":  [
+                                   320,
+                                   170
+                               ],
+                      "pos":  [
+                                  -1520,
+                                  180
+                              ],
+                      "order":  34,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             4,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        44
+                                                    ],
+                                          "name":  "image_or_block",
+                                          "type":  "IMAGE"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCSegmentImageGate"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  30,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     },
+                                     {
+                                         "link":  38,
+                                         "name":  "image",
+                                         "type":  "IMAGE"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  25,
+                      "type":  "CCSegmentImageGate",
+                      "size":  [
+                                   320,
+                                   170
+                               ],
+                      "pos":  [
+                                  -1520,
+                                  380
+                              ],
+                      "order":  35,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             5,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        45
+                                                    ],
+                                          "name":  "image_or_block",
+                                          "type":  "IMAGE"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCSegmentImageGate"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  31,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     },
+                                     {
+                                         "link":  39,
+                                         "name":  "image",
+                                         "type":  "IMAGE"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  26,
+                      "type":  "CCSegmentImageGate",
+                      "size":  [
+                                   320,
+                                   170
+                               ],
+                      "pos":  [
+                                  -1520,
+                                  580
+                              ],
+                      "order":  36,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             6,
+                                             true
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        46
+                                                    ],
+                                          "name":  "image_or_block",
+                                          "type":  "IMAGE"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCSegmentImageGate"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  32,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     },
+                                     {
+                                         "link":  40,
+                                         "name":  "image",
+                                         "type":  "IMAGE"
+                                     }
+                                 ]
+                  },
+                  {
+                      "flags":  {
+
+                                },
+                      "type":  "KlingStartEndFrameNode",
+                      "bgcolor":  "#653",
+                      "inputs":  [
+                                     {
+                                         "link":  41,
+                                         "name":  "start_frame",
+                                         "type":  "IMAGE"
+                                     },
+                                     {
+                                         "link":  47,
+                                         "name":  "end_frame",
+                                         "type":  "IMAGE"
+                                     }
+                                 ],
+                      "color":  "#432",
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        48
+                                                    ],
+                                          "name":  "VIDEO",
+                                          "type":  "VIDEO"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "video_id",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "duration",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "order":  41,
+                      "size":  [
+                                   430,
+                                   320
+                               ],
+                      "pos":  [
+                                  -1140,
+                                  -440
+                              ],
+                      "widgets_values":  [
+                                             "Paste segment 1 prompt from Preview node (Parser segment 1).",
+                                             "Use parser negative by keeping Exclude: ... in prompt text.",
+                                             1,
+                                             "9:16",
+                                             "pro mode / 5s duration / kling-v1-6"
+                                         ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KlingStartEndFrameNode"
+                                     },
+                      "id":  27,
+                      "mode":  0
+                  },
+                  {
+                      "flags":  {
+
+                                },
+                      "type":  "KlingStartEndFrameNode",
+                      "bgcolor":  "#653",
+                      "inputs":  [
+                                     {
+                                         "link":  42,
+                                         "name":  "start_frame",
+                                         "type":  "IMAGE"
+                                     },
+                                     {
+                                         "link":  null,
+                                         "name":  "end_frame",
+                                         "type":  "IMAGE"
+                                     }
+                                 ],
+                      "color":  "#432",
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        49
+                                                    ],
+                                          "name":  "VIDEO",
+                                          "type":  "VIDEO"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "video_id",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "duration",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "order":  42,
+                      "size":  [
+                                   430,
+                                   320
+                               ],
+                      "pos":  [
+                                  -1140,
+                                  -220
+                              ],
+                      "widgets_values":  [
+                                             "Paste segment 2 prompt from Preview node (Parser segment 2).",
+                                             "Use parser negative by keeping Exclude: ... in prompt text.",
+                                             1,
+                                             "9:16",
+                                             "pro mode / 5s duration / kling-v1-6"
+                                         ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KlingStartEndFrameNode"
+                                     },
+                      "id":  28,
+                      "mode":  0
+                  },
+                  {
+                      "flags":  {
+
+                                },
+                      "type":  "KlingStartEndFrameNode",
+                      "bgcolor":  "#653",
+                      "inputs":  [
+                                     {
+                                         "link":  43,
+                                         "name":  "start_frame",
+                                         "type":  "IMAGE"
+                                     },
+                                     {
+                                         "link":  null,
+                                         "name":  "end_frame",
+                                         "type":  "IMAGE"
+                                     }
+                                 ],
+                      "color":  "#432",
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        50
+                                                    ],
+                                          "name":  "VIDEO",
+                                          "type":  "VIDEO"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "video_id",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "duration",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "order":  43,
+                      "size":  [
+                                   430,
+                                   320
+                               ],
+                      "pos":  [
+                                  -1140,
+                                  0
+                              ],
+                      "widgets_values":  [
+                                             "Paste segment 3 prompt from Preview node (Parser segment 3).",
+                                             "Use parser negative by keeping Exclude: ... in prompt text.",
+                                             1,
+                                             "9:16",
+                                             "pro mode / 5s duration / kling-v1-6"
+                                         ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KlingStartEndFrameNode"
+                                     },
+                      "id":  29,
+                      "mode":  0
+                  },
+                  {
+                      "flags":  {
+
+                                },
+                      "type":  "KlingStartEndFrameNode",
+                      "bgcolor":  "#653",
+                      "inputs":  [
+                                     {
+                                         "link":  44,
+                                         "name":  "start_frame",
+                                         "type":  "IMAGE"
+                                     },
+                                     {
+                                         "link":  null,
+                                         "name":  "end_frame",
+                                         "type":  "IMAGE"
+                                     }
+                                 ],
+                      "color":  "#432",
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        51
+                                                    ],
+                                          "name":  "VIDEO",
+                                          "type":  "VIDEO"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "video_id",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "duration",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "order":  44,
+                      "size":  [
+                                   430,
+                                   320
+                               ],
+                      "pos":  [
+                                  -1140,
+                                  220
+                              ],
+                      "widgets_values":  [
+                                             "Paste segment 4 prompt from Preview node (Parser segment 4).",
+                                             "Use parser negative by keeping Exclude: ... in prompt text.",
+                                             1,
+                                             "9:16",
+                                             "pro mode / 5s duration / kling-v1-6"
+                                         ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KlingStartEndFrameNode"
+                                     },
+                      "id":  30,
+                      "mode":  0
+                  },
+                  {
+                      "flags":  {
+
+                                },
+                      "type":  "KlingStartEndFrameNode",
+                      "bgcolor":  "#653",
+                      "inputs":  [
+                                     {
+                                         "link":  45,
+                                         "name":  "start_frame",
+                                         "type":  "IMAGE"
+                                     },
+                                     {
+                                         "link":  null,
+                                         "name":  "end_frame",
+                                         "type":  "IMAGE"
+                                     }
+                                 ],
+                      "color":  "#432",
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        52
+                                                    ],
+                                          "name":  "VIDEO",
+                                          "type":  "VIDEO"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "video_id",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "duration",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "order":  45,
+                      "size":  [
+                                   430,
+                                   320
+                               ],
+                      "pos":  [
+                                  -1140,
+                                  440
+                              ],
+                      "widgets_values":  [
+                                             "Paste segment 5 prompt from Preview node (Parser segment 5).",
+                                             "Use parser negative by keeping Exclude: ... in prompt text.",
+                                             1,
+                                             "9:16",
+                                             "pro mode / 5s duration / kling-v1-6"
+                                         ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KlingStartEndFrameNode"
+                                     },
+                      "id":  31,
+                      "mode":  0
+                  },
+                  {
+                      "flags":  {
+
+                                },
+                      "type":  "KlingStartEndFrameNode",
+                      "bgcolor":  "#653",
+                      "inputs":  [
+                                     {
+                                         "link":  46,
+                                         "name":  "start_frame",
+                                         "type":  "IMAGE"
+                                     },
+                                     {
+                                         "link":  null,
+                                         "name":  "end_frame",
+                                         "type":  "IMAGE"
+                                     }
+                                 ],
+                      "color":  "#432",
+                      "outputs":  [
+                                      {
+                                          "links":  [
+                                                        53
+                                                    ],
+                                          "name":  "VIDEO",
+                                          "type":  "VIDEO"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "video_id",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "duration",
+                                          "type":  "STRING"
+                                      }
+                                  ],
+                      "order":  46,
+                      "size":  [
+                                   430,
+                                   320
+                               ],
+                      "pos":  [
+                                  -1140,
+                                  660
+                              ],
+                      "widgets_values":  [
+                                             "Paste segment 6 prompt from Preview node (Parser segment 6).",
+                                             "Use parser negative by keeping Exclude: ... in prompt text.",
+                                             1,
+                                             "9:16",
+                                             "pro mode / 5s duration / kling-v1-6"
+                                         ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KlingStartEndFrameNode"
+                                     },
+                      "id":  32,
+                      "mode":  0
+                  },
+                  {
+                      "mode":  0,
+                      "id":  33,
+                      "type":  "SaveVideo",
+                      "size":  [
+                                   280,
+                                   220
+                               ],
+                      "pos":  [
+                                  -620,
+                                  -440
+                              ],
+                      "order":  51,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "video/ComfyUI",
+                                             "auto",
+                                             "auto"
+                                         ],
+                      "outputs":  [
+
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveVideo"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  48,
+                                         "name":  "video",
+                                         "type":  "VIDEO"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  34,
+                      "type":  "SaveVideo",
+                      "size":  [
+                                   280,
+                                   220
+                               ],
+                      "pos":  [
+                                  -620,
+                                  -220
+                              ],
+                      "order":  52,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "video/ComfyUI",
+                                             "auto",
+                                             "auto"
+                                         ],
+                      "outputs":  [
+
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveVideo"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  49,
+                                         "name":  "video",
+                                         "type":  "VIDEO"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  35,
+                      "type":  "SaveVideo",
+                      "size":  [
+                                   280,
+                                   220
+                               ],
+                      "pos":  [
+                                  -620,
+                                  0
+                              ],
+                      "order":  53,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "video/ComfyUI",
+                                             "auto",
+                                             "auto"
+                                         ],
+                      "outputs":  [
+
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveVideo"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  50,
+                                         "name":  "video",
+                                         "type":  "VIDEO"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  36,
+                      "type":  "SaveVideo",
+                      "size":  [
+                                   280,
+                                   220
+                               ],
+                      "pos":  [
+                                  -620,
+                                  220
+                              ],
+                      "order":  54,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "video/ComfyUI",
+                                             "auto",
+                                             "auto"
+                                         ],
+                      "outputs":  [
+
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveVideo"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  51,
+                                         "name":  "video",
+                                         "type":  "VIDEO"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  37,
+                      "type":  "SaveVideo",
+                      "size":  [
+                                   280,
+                                   220
+                               ],
+                      "pos":  [
+                                  -620,
+                                  440
+                              ],
+                      "order":  55,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "video/ComfyUI",
+                                             "auto",
+                                             "auto"
+                                         ],
+                      "outputs":  [
+
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveVideo"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  52,
+                                         "name":  "video",
+                                         "type":  "VIDEO"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  38,
+                      "type":  "SaveVideo",
+                      "size":  [
+                                   280,
+                                   220
+                               ],
+                      "pos":  [
+                                  -620,
+                                  660
+                              ],
+                      "order":  56,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             "video/ComfyUI",
+                                             "auto",
+                                             "auto"
+                                         ],
+                      "outputs":  [
+
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveVideo"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  53,
+                                         "name":  "video",
+                                         "type":  "VIDEO"
+                                     }
+                                 ]
+                  },
+                  {
+                      "mode":  0,
+                      "id":  45,
+                      "type":  "CCFramePairPlanner",
+                      "size":  [
+                                   470,
+                                   250
+                               ],
+                      "pos":  [
+                                  260,
+                                  2080
+                              ],
+                      "order":  70,
+                      "flags":  {
+
+                                },
+                      "widgets_values":  [
+                                             1,
+                                             0,
+                                             1
+                                         ],
+                      "outputs":  [
+                                      {
+                                          "links":  null,
+                                          "name":  "pairs_json",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "pairs_text",
+                                          "type":  "STRING"
+                                      },
+                                      {
+                                          "links":  null,
+                                          "name":  "required_frame_count",
+                                          "type":  "INT"
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CCFramePairPlanner"
+                                     },
+                      "inputs":  [
+                                     {
+                                         "link":  33,
+                                         "name":  "segment_count",
+                                         "type":  "INT"
+                                     }
+                                 ]
+                  }
+              ],
+    "links":  [
+                  [
+                      1,
+                      1,
+                      0,
+                      5,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      2,
+                      1,
+                      0,
+                      6,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      3,
+                      2,
+                      0,
+                      6,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      4,
+                      5,
+                      0,
+                      6,
+                      2,
+                      "STRING"
+                  ],
+                  [
+                      5,
+                      4,
+                      0,
+                      7,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      6,
+                      6,
+                      0,
+                      7,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      7,
+                      7,
+                      0,
+                      8,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      8,
+                      3,
+                      0,
+                      8,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      9,
+                      7,
+                      0,
+                      9,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      10,
+                      3,
+                      0,
+                      9,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      11,
+                      7,
+                      0,
+                      10,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      12,
+                      3,
+                      0,
+                      10,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      13,
+                      7,
+                      0,
+                      11,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      14,
+                      3,
+                      0,
+                      11,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      15,
+                      7,
+                      0,
+                      12,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      16,
+                      3,
+                      0,
+                      12,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      17,
+                      7,
+                      0,
+                      13,
+                      0,
+                      "STRING"
+                  ],
+                  [
+                      18,
+                      3,
+                      0,
+                      13,
+                      1,
+                      "STRING"
+                  ],
+                  [
+                      27,
+                      8,
+                      6,
+                      21,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      28,
+                      8,
+                      6,
+                      22,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      29,
+                      8,
+                      6,
+                      23,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      30,
+                      8,
+                      6,
+                      24,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      31,
+                      8,
+                      6,
+                      25,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      32,
+                      8,
+                      6,
+                      26,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      33,
+                      8,
+                      6,
+                      45,
+                      0,
+                      "INT"
+                  ],
+                  [
+                      35,
+                      14,
+                      0,
+                      21,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      36,
+                      15,
+                      0,
+                      22,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      37,
+                      16,
+                      0,
+                      23,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      38,
+                      17,
+                      0,
+                      24,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      39,
+                      18,
+                      0,
+                      25,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      40,
+                      19,
+                      0,
+                      26,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      41,
+                      21,
+                      0,
+                      27,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      42,
+                      22,
+                      0,
+                      28,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      43,
+                      23,
+                      0,
+                      29,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      44,
+                      24,
+                      0,
+                      30,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      45,
+                      25,
+                      0,
+                      31,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      46,
+                      26,
+                      0,
+                      32,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      47,
+                      15,
+                      0,
+                      27,
+                      1,
+                      "IMAGE"
+                  ],
+                  [
+                      48,
+                      27,
+                      0,
+                      33,
+                      0,
+                      "VIDEO"
+                  ],
+                  [
+                      49,
+                      28,
+                      0,
+                      34,
+                      0,
+                      "VIDEO"
+                  ],
+                  [
+                      50,
+                      29,
+                      0,
+                      35,
+                      0,
+                      "VIDEO"
+                  ],
+                  [
+                      51,
+                      30,
+                      0,
+                      36,
+                      0,
+                      "VIDEO"
+                  ],
+                  [
+                      52,
+                      31,
+                      0,
+                      37,
+                      0,
+                      "VIDEO"
+                  ],
+                  [
+                      53,
+                      32,
+                      0,
+                      38,
+                      0,
+                      "VIDEO"
+                  ]
+              ],
+    "groups":  [
+
+               ],
+    "config":  {
+
+               },
+    "extra":  {
+                  "ds":  {
+                             "scale":  0.54,
+                             "offset":  [
+                                            1560,
+                                            430
+                                        ]
+                         }
+              },
+    "version":  0.4
+}
