@@ -12,4 +12,4 @@ Repository = "https://github.com/mircudx/Auto-Card-Generator"
 
 [tool.comfy]
 PublisherId = "mircudx"
-DisplayName = "Card Creator LLM Nodes"
+DisplayName = "mircudx custom nodes"
