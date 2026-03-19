@@ -1,4 +1,4 @@
-﻿# Card Creator LLM Nodes (ComfyUI)
+# Card Creator LLM Nodes (ComfyUI)
 
 This package includes baseline stacks for script-driven Kling workflows.
 
@@ -63,4 +63,4 @@ Copy `card_creator_llm` into:
 
 Restart ComfyUI.
 
-If a workflow imports with missing node errors, try the `*_local_safe.json` variant first.
+If a workflow imports with missing node errors, try `*_local_safe_compat.json` first.
