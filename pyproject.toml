@@ -1,7 +1,7 @@
 [project]
 name = "card-creator-llm-nodes"
 description = "ComfyUI nodes for script-aware Kling prompt planning with GPT-5.4"
-version = "0.1.1"
+version = "0.1.2"
 license = { file = "LICENSE.txt" }
 readme = "README.md"
 requires-python = ">=3.10"
